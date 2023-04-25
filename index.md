@@ -37,7 +37,28 @@ for the code:
     return arr;
   }
 ```
+![Image](fail2.png) 
+>for this code, the void keyword is causing the reverseinplace to not return anything, along with needed a temp value to save our initial value. 
+```static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+``` 
+Here is the code before the bug is fixed, 
 
+``` static int[] reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      int temp=arr[i];
+      arr[i] = arr[arr.length - i - 1];
+      arr[arr.length-i-1]=temp;
+
+    }
+    return arr;
+  }
+```
+This is what it looks like after it is fixed. 
+>In lab week 3, I learned that in order to sucessfully create a new local host you need to have a port number that is unique, which means the number should usually be a very high-valued number. 
 
 
 

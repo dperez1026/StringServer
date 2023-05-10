@@ -98,7 +98,6 @@ for the code:
   }
 ``` 
 Here is the code before the bug is fixed
-
 ``` static int[] reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length; i += 1) {
       int temp=arr[i];
@@ -108,8 +107,8 @@ Here is the code before the bug is fixed
     }
     return arr;
   }
-```
-This is what it looks like after it is fixed. 
+```  
+This is what it looks like after it is fixed.  
 >In lab week 3, I learned that in order to sucessfully create a new local host you need to have a port number that is unique, which means the number should usually be a very high-valued number. 
 
 

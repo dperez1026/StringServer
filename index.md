@@ -128,11 +128,10 @@ static int[] reverseInPlace(int[] arr) {
       int temp=arr[i];
       arr[i] = arr[arr.length - i - 1];
       arr[arr.length-i-1]=temp;
-
     }
     return arr;
   }
-```  
+```
 ## Part 3  
 
 In lab week 3, I learned that in order to sucessfully create a new local host you need to have a port number that is unique, which means the number should usually be a very high-valued number. 

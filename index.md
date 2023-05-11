@@ -134,7 +134,7 @@ static int[] reverseInPlace(int[] arr) {
 ```
 ## Part 3  
 
-In lab week 3, I learned that in order to sucessfully create a new local host you need to have a port number that is unique, which means the number should usually be a very high-valued number. 
+In lab week 3, I learned that in order to sucessfully create a new local host you need to have a port number that is unique, which means the number should usually be a very high-valued number. I also learned when using paths such as `/add-message?s=How are you` , you have the option of inputting this directly into the search bar on the search engine of choice, which directly adds the path and function that is in use. 
 
 
 

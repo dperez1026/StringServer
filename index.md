@@ -61,7 +61,9 @@ public class StringServer {
  
 ![Image](webs5.png) 
 >For the next image, the same method **handleRequst(Socket clientSocket)** is being called, the relevent args are 'clientSocket' and the GET request adds the message with the same param 's' which is set to 'What are you doing later?'. The field 'message' now changes to 'What are you doing later?'.  
-## Part 2
+
+## Part 2  
+
 
 ```
 public class ArrayTests {
@@ -71,35 +73,10 @@ public class ArrayTests {
     ArrayExamples.reverseInPlace(input1);
     assertArrayEquals(new int[]{4,3,2,1,0}, input1);
 	}
-```
-the following code tests the code below and results in an error for this code:
-```static void reverseInPlace(int[] arr) {
-    for(int i = 0; i < arr.length; i += 1) {
-      arr[i] = arr[arr.length - i - 1];
-    }
-  }
-```
-This input does **not** induce a failure for a different line of code.:
-```
-@Test
-  public void testReversed() {
-    int[] input1 = { };
-    assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
-  }
-}
-```
-for the code: 
-```static int[] reversed(int[] arr) {
-    int[] newArray = new int[arr.length];
-    for(int i = 0; i < arr.length; i += 1) {
-      arr[i] = newArray[arr.length - i - 1];
-    }
-    return arr;
-  }
-```
-![Image](fail2.png) 
-for this code, the void keyword is causing the `reverseinplace`  to not return anything, along with needed a temp value to save our initial value.   
-Here is the code before the bug is fixed:
+```  
+
+the following code above tests the code below by inputting an array of values, the code below is intended to take in an array and reverse each element, but results in a failure:  
+
 ```
 static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length; i += 1) {
@@ -107,9 +84,46 @@ static void reverseInPlace(int[] arr) {
     }
   }
 ```  
-Here is the code after the bug is fixed:
+This input also adds a test case with an input paramater as an array for a different line of code:  
 
-``` static int[] reverseInPlace(int[] arr) {
+```
+@Test
+  public void testReversed() {
+    int[] input1 = { };
+    assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
+  }
+}
+```  
+
+the different line of code for the test case above takes in the array as an input, and reverses each element:  
+
+```
+static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = newArray[arr.length - i - 1];
+    }
+    return arr;
+  }
+```  
+
+![Image](fail2.png) 
+for this code, the void keyword is the sympton in this code which causes `reverseinplace`  to not return anything, along with needed a temp value to save our initial value. Since the code requires a returned variable, the void keyword automatically disables the block of code from returning any kind of value, so removing it is necessary.  
+
+Here is the code before the bug is fixed:  
+
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+```  
+Here is the code after the bug is fixed:  
+
+
+```
+static int[] reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length; i += 1) {
       int temp=arr[i];
       arr[i] = arr[arr.length - i - 1];
@@ -119,7 +133,8 @@ Here is the code after the bug is fixed:
     return arr;
   }
 ```  
-## Part 3
+## Part 3  
+
 In lab week 3, I learned that in order to sucessfully create a new local host you need to have a port number that is unique, which means the number should usually be a very high-valued number. 
 
 
